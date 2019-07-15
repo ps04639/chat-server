@@ -1,0 +1,50 @@
+26/06/19
+API  endpooint :
+
+POST  http://localhost:3001/user/register
+{
+	"nameInput" : "satish",
+	"emailIdInput" : "sat@asdcom",
+	"ipAddressInput" : "12333213"
+}
+
+GET http://localhost:3001/response?inputText="coffee prepared "&questionId=0&userId=2&ipAddress=2342
+GET http://localhost:3001/questions/update?pageSize=5&currentPageNumber=9
+GET http://localhost:3001/user/list?pageSize=5&currentPageNumber=1
+GET http://localhost:3001/user/list?pageSize=5&currentPageNumber=1&userId=1
+GET http://localhost:3001/admin?user=adminUserEmail&password=pwd
+
+
+run : node index.js or npm start
+
+
+/////////////////////////
+Postgres Database and Sequelize Install Postgres and pgAdmin 4 for local testing - https://www.postgresql.org/download/ & https://www.pgadmin.org/download/\ Create login/group role - postgres and chatbot_db database using pgAdmin or postgres cli/psql - this DB configuration is present under config/config.js
+
+Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication, database migrations and more.
+
+Install sequelize cli : npm install -g sequelize-cli
+
+To generate a new model use sequelize model:generate, e.g. npx sequelize model:generate --name Users --attributes name:string,role:string
+Details: https://github.com/sequelize/cli/blob/master/docs/FAQ.md
+
+To apply migrations on local database: npx sequelize db:migrate\
+
+To seed data into model to generate seed use : npx sequelize seed:generate --name seedName, eg npx sequelize seed:generate --name videos. to run seed use : npx sequelize db:seed:all
+
+Details: http://docs.sequelizejs.com/manual/migrations.html
+
+###################################################
+
+References : 
+#folder and packages
+https://medium.com/@purposenigeria/build-a-restful-api-with-node-js-and-express-js-d7e59c7a3dfb
+
+//  MS SQL Server
+https://www.npmjs.com/package/mssql
+
+
+#Sequelize
+Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server.
+Sequelize follows SEMVER. Supports Node v6 and above to use ES6 features.
+http://docs.sequelizejs.com/manual/usage.html
